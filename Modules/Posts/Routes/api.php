@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::prefix('v1/posts')->group(function (){
-    Route::get('','PostsController@all');
-    Route::post('','PostsController@create');
-    Route::put('{post_id}','PostsController@update');
-    Route::get('{post_id}','PostsController@getById');
-    Route::delete('{post_id}','PostsController@delete');
+Route::prefix('v1/posts')->name('posts.')->group(function (){
+    Route::get('','PostsController@all')->name('all');
+    Route::post('','PostsController@create')->name('create');
+    Route::put('{post_id}','PostsController@update')->name('update');
+    Route::get('{post_id}','PostsController@getById')->name('get.by.id');
+    Route::delete('{post_id}','PostsController@delete')->name('delete');
 });
